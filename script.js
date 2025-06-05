@@ -8,7 +8,6 @@ generateButton.addEventListener("click", generatePallete);
 paletteContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("copy-btn")) {
     const hexValue = e.target.previousElementSibling.textContent;
-    console.log("hexValue: ", hexValue);
     navigator.clipboard
       .writeText(hexValue)
       .then(() => showCopySuccess(e.target))
@@ -16,7 +15,6 @@ paletteContainer.addEventListener("click", (e) => {
   } else if (e.target.classList.contains("color")) {
     const hexValue =
       e.target.nextElementSibling.querySelector(".color-hex").textContent;
-    console.log("hexValue: ", hexValue);
     navigator.clipboard
       .writeText(hexValue)
       .then(() =>
@@ -27,7 +25,6 @@ paletteContainer.addEventListener("click", (e) => {
 });
 
 function showCopySuccess(element) {
-  console.log(element);
   element.classList.remove("far", "far-copy");
   element.classList.add("fas", "fa-check");
   element.style.color = "#48bb78";
